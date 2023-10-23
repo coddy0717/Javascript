@@ -1,0 +1,20 @@
+/* para darle estilo variado se tiene que crear una 
+clase en las etiquetas  */
+p{  /*Dado a que son parrafos se puede aplicar algunos estilos mas
+    sin importar el tipo de clase que lleve*/
+    text-align: center;
+}
+.normal
+{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    ;
+    color: black;
+}
+.destacado{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    background-color: khaki;
+
+
+}
