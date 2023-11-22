@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Estilo para el input */
+input[type="text"] {
+    width: 100%; /* El input ocupará el 100% del ancho disponible */
+    padding: 10px; /* Relleno interno */
+    margin: 10px 0; /* Margen exterior */
+    font-size: 16px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+    transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+/* Cambiar color del borde cuando el input está enfocado */
+input[type="text"]:focus {
+    border-color: #4CAF50; /* Color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno alrededor del input al enfocarlo */
+}
+
+/* Estilo para el input */
+input[type="number"] {
+    width: 100%; /* El input ocupará el 100% del ancho disponible */
+    padding: 10px; /* Relleno interno */
+    margin: 10px 0; /* Margen exterior */
+    font-size: 16px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+    transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+/* Cambiar color del borde cuando el input está enfocado */
+input[type="number"]:focus {
+    border-color: #4CAF50; /* Color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno alrededor del input al enfocarlo */
+}

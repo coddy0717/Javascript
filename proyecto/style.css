@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #3498db;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    display: block; /* Añadido para que el input sea un elemento de bloque */
+    margin: 0 auto; /* Esto centrará el input horizontalmente */
+}
+
+
+div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
