@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let perro={
+            color:"marron",
+            raza:"Chiguaga",
+            nombre:"Juanito",
+            ladrar(){
+                console.log("Guau ");
+            },
+            saludar(){
+                // la funcion this permite llamar a un atributo 
+                //dentro del objeto sin tener que poner el nombre del objeto y el nombre del atributo
+                console.log("Hola mi nombres es: " + this.nombre)
+            }
+
+        };
+        //modificar el valor
+
+        perro.color="azul"
+        //modificar por funcion 
+        function modificar(){
+            perro.color="azul"
+        }
+        //crear nuevos objetos 
+        perro["edad"]= 10;
+    </script>
+    
+</body>
+</html>

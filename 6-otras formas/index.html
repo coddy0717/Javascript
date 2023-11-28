@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //object crea objetos vacios
+     let coche1= new Object();
+     coche1.marca= "Chevrolet"
+     coche1["modelo"]= "Prisma"
+     coche1.encender= function (){
+        console.log("Choche encendido")
+     }
+     //agregar un atributo al objecto 
+     let perro1= new Object({nombre: "Simba"})
+
+     //metodo create
+     //create permite crear una nueva instancia en cualquier objecto
+     let coche2= Object.create(coche1);
+    </script>
+    
+</body>
+</html>

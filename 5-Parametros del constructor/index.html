@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // se pasan parametros para para que
+        //cada objeto nuevo creado por el contrsutor tenga 
+        //atributos diferentes
+      function Perro(raza, edad){
+        this.patas= 4;
+        //la primera es la raza es la propiedad y la segunda 
+        //es el parametro que pasa el usuario
+        this.raza= raza;
+        this.edad=edad;
+        this.ladrar= function(){
+            console.log("Guau")
+        }
+
+      }
+      let simba= new Perro("Doberman",10);
+
+      //constructor para un objeto empleado
+      function empleado(nombre, apellido, edad, cargo){
+        this.empresa= "Hp";
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.edad=edad;
+        this.cargo=cargo;
+        this.saludo= function(){
+            // SE UTILIZA EL "`"
+            alert(`La empresa  ${this.empresa}  Hola mi nombre es:  ${this.nombre} y mi apellido es ${this.apellido} y tengo una edad de ${this.edad} y mi cargo es: ${this.cargo}`)
+        }
+
+      }
+      let empleado1= new empleado("Juan", "Garcia", 20, "Supervisor");
+      empleado1.saludo()
+    </script>
+    
+</body>
+</html>
