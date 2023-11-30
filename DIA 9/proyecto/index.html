@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+
+    </ul>
+    <button onclick="Mostrar()">Mostrar Vehiculos</button>
+    <script>
+        function Mostrar(){
+            let lista= document.getElementById("lista")
+            for(let x of autos){
+               let etiqueta= document.createElement("li");
+               etiqueta.innerText=x.verAuto();
+               lista.appendChild(etiqueta)
+            }
+
+        }
+        function Automovil(duenio, marca, modelo, anio){
+                this.duenio=duenio;
+                this.marca= marca;
+                this.modelo= modelo;
+                this.anio=anio;
+        }
+        let auto1= new Automovil('Martha', "Ford", "XS2", 2015);
+        let auto2= new Automovil("Martha", "Mazda", "BT15", 2012)
+        let auto3= new Automovil("Jill", "ford", "sw", 2000)
+        let autos=[auto1, auto2, auto3]
+
+        Automovil.prototype.vender= function(titular){
+            this.duenio= titular
+        }
+        Automovil.prototype.verAuto = function() {
+    return `${this.modelo} ${this.marca} - ${this.anio} - ${this.duenio}`;
+}
+
+        Automovil.prototype.enceder= function(){
+            alert("El automovil se ha encendido")
+        }
+
+    </script>
+</body>
+</html>

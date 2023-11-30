@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function Empleado(nombre, antiguedad, sueldo){
+    this.nombre= nombre;
+    this.antiguedad= antiguedad;
+    this.sueldo= sueldo;
+
+    }
+    //definicion de un objeto
+    let empleado1= new Empleado("joel", "aso", 21)
+    //para modificar el prototipo del constructor Empleado se lo hace de la siguinete manera
+    //solo se puede agregar funciones mas  no nuevos propiedades dado que se tiene que cambiar las propiedades
+    //de los objetos heredados
+    //el prototype afecta directamenete al constructor y los nuevos objetos heredan esta funcion 
+    Empleado.prototype.saludo= function(){
+        console.log("Hola" + this.nombre)
+    }
+
+    
+    </script>
+</body>
+</html>
