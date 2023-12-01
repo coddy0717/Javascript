@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+   <script>
+    //forma predeterminada de crear un clase esto no es "OBJETO PROTIPO" DADO A QUE NO SE 
+    //PUEDE ACCEDER A LAS PROPIEDADES
+    class Papel{
+        //es necesario crear un constructor y poner sus parametros
+        constructor(alto, ancho){
+            this.alto=alto;
+            this.ancho=ancho;
+        }
+    }
+    //aqui se crea un objeto a partir de una clase 
+
+    let Papel1= new Papel(4,5)
+    //creacion de una clase anonima, se dice anonima dado a que no tiene puesto el nombre de una clase sino que es 
+    // una variable 
+    let Papel22= class {
+         //es necesario crear un constructor y poner sus parametros
+         constructor(alto, ancho){
+            this.alto=alto;
+            this.ancho=ancho;
+        }
+    }
+    // de ahi se crea un nuevo objeto que es lo mismo 
+    let Papel12= new Papel22 (4,5)
+    //otra forma de crear una clase pero no es anonima sino que es nombrada 
+    let Papel123= class PapelB {
+        constructor(alto, ancho){
+            this.alto=alto;
+            this.ancho=ancho;
+        }
+    }
+    //para crear un objeto nuevo se lo tiene que llamar por la variable 
+    let x= new Papel123(12,5)
+ 
+   </script> 
+</body>
+</html>

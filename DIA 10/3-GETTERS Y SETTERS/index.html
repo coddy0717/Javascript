@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          class Deportista{
+            constructor(nombre, apellido){
+                this.nombre= nombre;
+                this.apellido=apellido;
+            }
+        }
+       
+        //creacion de una subclase o "Calse hija"
+        //se utiliza la palabra extends que significa que se extiende de la clase Deportista
+        class Futbolista extends Deportista{
+            //definimos el constructor de la clas Futbolista
+            constructor(nombre, apellido, goles){
+                //el constructor tiene un parametro de goles 
+                super(nombre, apellido);
+                //utilizamos el super para ya no tener que definir las propiedades del nombre y apellido
+                //solo definimos las el nuevo parametro del constructor que es goles
+                //se pone un guion "._" en la propiedad del objeto para indicar que dicha propiedad no puede ser modifcada
+                //a menos que se se utilice un getter o setter
+                this._goles= goles;
+            }
+            //creacion de un getter
+            //cuando se crea un get se obtiene un valor 
+            //mientras que set establece un valor en las propiedades de un objeto
+            // los getter y setters deben establecerce fuera del constructor 
+            get goles(){
+                //aqui se hace que me devuelva el valor del parametro "this._goles"
+                return this._goles
+
+            }
+            set goles(nuevogoles){
+                this._goles= nuevogoles;
+            }
+        }
+        //aqui establecimos el nuevo objeto Futbolista1 Y MESSI TIENE 326 GOLES
+        let Futbolista1= new Futbolista("Leonel", "Messi", 326)
+        //AHORA VAMOS A MODIFICAR LOS GOLES QUE TIENE MESSI
+        Futbolista.goles=126;
+
+    </script>
+    
+</body>
+</html>
