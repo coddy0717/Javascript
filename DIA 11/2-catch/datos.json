@@ -1,0 +1,13 @@
+{
+    "nombre": "Homero Simpson",
+    "edad":45,
+    "EsEstudiante": false,
+   " direccion":{
+    "calle":"Avenidad siempreviva",
+    "ciudad": "Sprinfield"
+    },
+    "telefono":[
+        "555 555 555",
+        "555 555 556"
+    ]
+}

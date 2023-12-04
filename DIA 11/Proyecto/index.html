@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="Banco()">
+    <h1 id="banco"></h1>
+    <h2 id="sucursal"></h2>
+    <p id="cuenta"></p>
+    <p id="titular"></p>
+    <p id="nro_cuenta"></p>
+    <p id="Saldo"></p>
+    <p id="Saldo2"></p>
+    <p id="cbu"></p>
+    <p id="abierto"></p>
+    <script>
+        //creacion de la variable que contenga los datos del json
+        function Banco(){
+            let datos;
+        fetch("resumen.json")
+        .then(respuesta => respuesta.json())
+        .then((salida)=>{
+            datos=salida;
+            document.getElementById("banco").textContent=datos.banco
+            document.getElementById("sucursal").textContent=datos.sucursal
+            document.getElementById("cuenta").textContent=datos.cuenta
+            document.getElementById("titular").textContent=datos.titular
+            document.getElementById("nro_cuenta").textContent=datos.nro_cuenta
+            document.getElementById("Saldo").textContent=datos.saldo[0].monto+ " USD"
+            document.getElementById("Saldo2").textContent=datos.saldo[1].monto+ " EUR"
+
+            document.getElementById("cbu").textContent=datos.cbu
+            document.getElementById("abierto").textContent=datos.abierto
+
+
+
+        })
+
+        }
+        
+    </script>
+</body>
+</html>

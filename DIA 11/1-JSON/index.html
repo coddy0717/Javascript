@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leer Json</title>
+</head>
+<body>
+    <div id="lista"></div>
+    <script>
+        //forma 1 de pedir datos
+        //creacion de la variable datosJson
+        let datosJson;
+        //creacion de la varibale xhr lo que va hacer es tener un respuesta del servidor
+        let xhr= new XMLHttpRequest();
+        // lo que se busca aqui a travez del metodo get es pedir la informacion al servidor se tiene que 
+        //especificar la ruta , se pregunta si es asincrono o no en el caso de ser true el programa no es sincronico
+        // es decir no se va recargar en otra pagina sino que va estar en la misma
+        xhr.open('GET',"datos.json",true);
+        //aqui se especifica que tipo de dato es que se va pedir en este caso es un json
+        xhr.responseType="json";
+        xhr.onload= function(){
+            //aqui se establece el status del json si la respuesta no es identica a 200 el archivo no llego
+            if(xhr.status ===200){
+                // la varibale datos json lo que va hacer es almacenar la respuesta que xhr
+                datosJson= xhr.response;
+                //creacion y obtension del id de lista
+                let texto=document.getElementById("lista");
+                //aqui especificamos que dato del json vamos a mostrar
+                texto.textContent= datosJson.nombre;
+            }else{
+                //manejo de errores
+            }
+
+        }
+        //finalmente enviamos 
+        xhr.send();
+    </script>
+    
+</body>
+</html>

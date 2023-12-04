@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH</title>
+</head>
+<body>
+    <div id="lista"></div>
+    <script>
+        //creacion de la varibale que almancenara el json
+        let datojson;
+        //utilizar el fetch
+        //se especifica la ruta del archivo json
+        fetch("datos.json")
+        //estamos dentro de la funcion json
+        //entonces cuando la promesa de respuesta tenga al formato de json 
+        .then(respuesta => respuesta.json())
+        //AQUI SE ESPEFICIA LA SALIDA DE LA OBTENCION DEL JSON
+        .then((salidad) => {
+            datojson=salidad;
+            let texto =document.getElementById("lista")
+            texto.textContent= datojson.nombre
+              //catch captura el erro pero para mostar el error es necesario pasar un parametro para que me lo vaya a mostar
+        .catch(function(error){alert(error)})
+        })
+      
+        </script>
+       
+</body>
+</html>
