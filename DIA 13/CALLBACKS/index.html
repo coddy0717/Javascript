@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    <script>
+        //aqui se estabelce un callback o cualquier nombre puede ir aqui 
+        // y mediante una sttimeout se estabalce que se imprima por pantalla 
+        //el mensaje de la consola pero solo cuand o pasen 5 segundos
+        function avanzafila(callback){
+            setTimeout (function(){
+                console.log("Te llaman")
+            callback()
+            }, 5000)
+        }
+        function mujer(){
+            console.log("Te llama mujer")
+        }
+        //se imprime primero esto
+        console.log("Llegas a la fila")
+        //llamar a funcion de avanza fila
+        //lo que pase aqui es que se ejecuta primero la funcion de avanza fila con su mensaje 
+        // de que te llaman luego se ejecuta de manera sincrona el mensaje de la funcion mujer 
+        //en el que dice que te llaman mujer
+        avanzafila(mujer)
+        //segundo esto 
+        console.log("Compra tu cafe")
+        
+    </script>
+</body>
+</html>

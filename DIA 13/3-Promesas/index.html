@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //crear una funcion para accerder a un archivo json en una direccion url
+        function archivo(){
+            //aqui se establace mediante un return una promesa 
+          return new Promise (function(resolve, reject){
+            fetch(" https://pokeapi.co/api/v2/pokemon/ditto")
+            .then(response =>{
+                    if(response.ok){
+                        return response.json()
+
+                    }else{
+                        reject(response.status)
+                    }
+            })
+            .then(datos=>{
+                resolve (datos)
+            }).catch(errro =>{
+                reject (erro)
+            })
+        })
+       
+        }
+        //se llama a la funcion }
+        archivo()
+        .then(function(usuarios){
+                console.log(usuarios)
+        }).catch(function(error){
+            console.error(error)
+        })
+    </script>
+</body>
+</html>

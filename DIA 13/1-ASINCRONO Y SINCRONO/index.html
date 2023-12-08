@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Accion sincrona
+        console.log("Inicio del proceso sincrono")
+        //ACCION 2
+        for(let x=0; x<5;x++){
+           
+                console.log(x)
+
+            
+        }
+        //proceso asincronico utilizando la funcion stimeout
+        setTimeout(function(){
+            for(let x=0; x<10;x++){           
+           console.log("Proceso asincrono"+ x)    
+   }
+        })
+
+        //Accion 3
+        console.log("Fin del proceso sincrono")
+    </script>
+</body>
+</html>
