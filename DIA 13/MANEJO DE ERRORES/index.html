@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // MANEJO DE ERRORES UTILZANDO CALLBACKS 
+        //se pone por parametro a,b y un callback
+        function Suma(a,b, callback){
+            setTimeout(function(){
+                //comprobar que los numeros ingresados sean tipo numericos
+                if(typeof a!= "number" || typeof b!="number"){
+                    //me va a retornar un callbak
+                    //lo que va a pasar es que la funcion callback dentro  me va a mostrar un mensaje de error
+                    return callback (new Error("Ingrese un numero por favor "))
+
+                }
+                //si en el caso de que el usuario no ingrese ningun valor se va poner de null pero si ingrese valores numericos 
+                //los va sumar
+                callback(null, a+b)
+            }, 1000)
+
+        }
+        //escribir la funcion suma y dentro e los paramtros escribimos los valores que se van a sumar 
+        // tambien se crea una funcion que va tener como parametro el error y el resultado de la suma
+        Suma(1,2 , function(error, resultado){
+            if(error){
+                console.log(error)
+            }else{
+                console.log(resultado)
+            }
+        })
+
+        //promesas 
+        function Sumar(a,b){
+            //se hace un retorno utilizando las promesas 
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(typeof a!= "number" || typeof b!="number"){
+                        //si existe a o b no son numericos se va
+                        reject(new Error("Ingrese valores numericos"))
+                    }else{
+                        resolve(a+b)
+                    }
+                },1000)
+            })
+
+        }
+        Sumar(3,4)
+        //capturar las posibles salidas 
+        .then(function(resultado){
+            console.log(resultado)
+        }).catch(function(error){
+            console.log(error)
+        })
+
+        //async y await 
+        //creacion de una function asyn
+        async function SumarN(a,b){
+            if(typeof a!= "number" || typeof b!="number"){
+                //arrojar un error 
+                throw new Error("Algun numero no es numerico")
+            }
+            //y si no hay error me va retornar la suma de a+b
+            return a+b;
+        }
+        //creacion de una function que me maneje errores 
+        async function Manejo(){
+            //utilizacion del try lo que va hacer es intentar resolver dicha operacion y si hay algun error en ella 
+            //lo va a mandar a catch 
+            try {
+                let resultado= await SumarN(11,2)
+                console.log(resultado)
+            } catch (error) {
+                console.log(error)
+                
+            }
+        }
+        //se llama a la funcion manejo porque es la va tiene los parametros de suman 
+        Manejo()
+    </script>
+</body>
+</html>

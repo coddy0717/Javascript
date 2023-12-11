@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //funcion asynv y await para codigo asincronico
+        //primero antes de crear una funcion se pone el async para indicar que esa funcion es asincronica
+        async function Datos(){
+            //despues se crea una variable para que alamacena el proceso de peticion de datos 
+            //despues de declar la variable se pone el await que vaa esperar que dicha peticion de informacion se complete
+            let respuestadatos1= await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php")
+            //lo que parseo la informacion de respuesdatos1 con el metodo json
+            let parsedatos1= await respuestadatos1.json()
+            ///
+            let respuestadatos2= await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Dark Magician")
+            //lo que parseo la informacion de respuesdatos1 con el metodo json
+            let parsedatos2= await respuestadatos2.json()
+            //mostrar en consola 
+            console.log(parsedatos1, parsedatos2)
+        }
+        Datos()
+    </script>
+</body>
+</html>

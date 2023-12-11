@@ -7,34 +7,40 @@
 </head>
 <body>
     <script>
-        //crear una funcion para accerder a un archivo json en una direccion url
-        function archivo(){
-            //aqui se establace mediante un return una promesa 
-          return new Promise (function(resolve, reject){
-            fetch(" https://pokeapi.co/api/v2/pokemon/ditto")
-            .then(response =>{
-                    if(response.ok){
-                        return response.json()
+        function obtenerDatos() {
+    return new Promise(function(resolve, reject) {
+        // Utilizamos la función fetch para realizar la solicitud HTTP
+        fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+            .then(response => {
+                // Verificamos si la respuesta fue exitosa (código 200)
+                if (response.ok) {
+                    // Parseamos la respuesta como JSON y la enviamos a la función resolve
+                    return response.json();
+                } else {
+                    // Si la respuesta no fue exitosa, rechazamos la promesa con el código de estado
+                    reject(response.status);
+                }
+            })
+            .then(data => {
+                // Resolvemos la promesa con los datos obtenidos
+                resolve(data);
+            })
+            .catch(error => {
+                // Manejamos errores generales y los enviamos a la función reject
+                reject(error);
+            });
+    });
+}
 
-                    }else{
-                        reject(response.status)
-                    }
-            })
-            .then(datos=>{
-                resolve (datos)
-            }).catch(errro =>{
-                reject (erro)
-            })
-        })
-       
-        }
-        //se llama a la funcion }
-        archivo()
-        .then(function(usuarios){
-                console.log(usuarios)
-        }).catch(function(error){
-            console.error(error)
-        })
+// Llamamos a la función y manejamos los resultados usando then y catch
+obtenerDatos()
+    .then(function(datos) {
+        console.log(datos);
+    })
+    .catch(function(error) {
+        console.error(error);
+    });
+
     </script>
 </body>
 </html>

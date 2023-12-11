@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizacion en vivio</title>
+</head>
+<body >
+    <h1 id="titulo"></h1>
+    <img id="imagen">
+    <p id="Dolar"></p>
+    <br>
+    <p id="Euro"></p>
+    <br>
+    <p id="Bitcoin"></p>
+    <script>
+        //llamamos a las 3 variables
+        let dolar = document.getElementById("Dolar")
+        let Euro =document.getElementById("Euro")
+        let bitcoin = document.getElementById("Bitcoin")
+        let titulo1= document.getElementById("titulo")
+         async function Cotizacion(){
+            let dolar1= await fetch("https://open.er-api.com/v6/latest/USD")
+            let resulataD= dolar1.json()
+            let euro1= await fetch("https://open.er-api.com/v6/latest/ARS")
+            let resulatae = euro1.json()
+            let bit= await fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+            let resultadobi= bit.json()
+        }
+             function Cargar(){
+              
+                let titulo =document.createElement("h1")
+                titulo.in="Dolar"
+                titulo1.appendChild(titulo)
+                
+            }
+    </script>
+</body>
+</html>
