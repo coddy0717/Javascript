@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //EL METODO PUT REEMPLAZA LOS DATOS 
+        //POST ENVIA LA INFORMACION
+        //DELETE BORRA 
+        //patch es para hacer camios temporales
+        // fetch("https://jsonplaceholder.typicode.com/posts/5",{
+        //     method:"PUT",
+        //     headers: {
+        //         "Content-Type":"application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         title:"JUAN",
+        //         body:"NO SE "
+        //     })
+        // })
+        // //AQUI ME VA DEVOLVER LA PROMESA
+        // .then(respuesta=>respuesta.json())
+        // //para odmitir la creacion funcion se utiliza => 
+        // .then(salida => 
+        //     console.log("Cambios realizados con exito", salida)
+        //  )
+        // .catch(error => console.error(error))
+        // fetch("https://jsonplaceholder.typicode.com/posts/5",
+        // {
+        //     //EN EL METODO DELETE SE BORRA TODO NOMAS SE ESPECIFICA EL METODO QUE SE VA A UTILIZAR
+        //     method:"DELETE"
+        // })
+        // .then(respuesta=>respuesta.json())
+        // .then(salida => console.log("borrdo con exito",salida))
+        // .catch(error =>console.error(erroe))
+        fetch("https://jsonplaceholder.typicode.com/posts/5",{
+            method:"PATCH",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                title:"Uno"
+            })
+            
+        })
+        .then(datos=>datos.json())
+        .then(salida => console.log(salida))
+        .catch(error => console.error(error))
+        </script>
+        
+      
+       
+</body>
+</html>

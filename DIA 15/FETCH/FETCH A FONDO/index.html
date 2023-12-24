@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let usuario= "coddy"
+        let contraseña= "1234"
+        //bearers ocupa un token
+        let token= "Mitoken"
+        fetch("https://jsonplaceholder.typicode.com/posts",{
+            method: "GET",
+            credentials: 'include',
+            cache:"only-if-cached",
+            //default: hace un pedido a la pagina web para cargar la informacion
+            //no-cache siempre hace una solicitud al navegador no importe que el cache guardado sea valido
+            //no-store: no hace copias de cahce en el sistema 
+            //reload : va a forzar al navegador a descargar una copia del cache sin importar que ya tenga uuna copia valida
+            //force-cache: forza al navegador a utilizar el cahe del sistema sin importar que dicha copia este caducada
+            //only-if-cached: el navegador solo va utilizar el cache si esta disponible
+            redirect:"",
+            //follow va a seguir todas las redirecciones 
+            //error va a mandar un tipo error si encuentra una redireccion
+            //manual devuelve el codigo de la promesa y hay que programarlo para ver que se hace con el
+
+            headers:{
+                //credenciales existen por 2 metodos el Bearer o BASIC
+                //CUANDO HACEMOS POR LA AUTORIZACION DE BASIC SE TIENE QUE PASAR LAS CONTRASEÑAS Y EL USUARIO
+/*                 "Authorization": "Basic" +btoa(usuario + ":" + contraseña),*/   
+                    //cuando se usa el metodo bearers solo se tiene que pasar el token que se nos genero 
+                    //como medida de seguridad
+                    "Authorization": "Bearers" + token,
+                "Content-Type":"application/json"
+            },
+            
+        })
+        .then(respuesta => {
+            if(respuesta.type==="opaqueredirect"){
+                let nuevaubicacion= respuesta.headers.get("Location")
+                console.log("Redirigiendo a: ", nuevaubicacion)
+            }else{
+               return respuesta.json()
+            }
+        })
+        .then(salida => console.log(salida))
+        .catch(error => console.error(error))
+    </script>
+    
+</body>
+</html>
